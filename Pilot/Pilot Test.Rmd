@@ -115,10 +115,18 @@ Informasi yang akan diambil dari halaman situs tersebut antara lain:
 1. _Link_ situs.
 
 ```{r, include=FALSE}
-load("/neliti/data neliti.rda")
+load("/neliti/neliti.rda")
 ```
 
-Tercatat ada
+Pada saat saya melakukan _web scraping_ pada `11 November 2021 17:20 WIB`, tercatat ada `r nrow(data_neliti)` buah jurnal di situs `neliti`. 
+
+```{r,echo=FALSE,warning=FALSE,warning=FALSE}
+data_neliti %>%
+  head(5) %>%
+  
+```
+
+Data hasil _web scraping_ terlampir.
 
 #### Situs `SINTA`
 
