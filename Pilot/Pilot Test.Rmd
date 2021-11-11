@@ -114,6 +114,10 @@ Informasi yang akan diambil dari halaman situs tersebut antara lain:
 1. Abstrak,
 1. _Link_ situs.
 
+```{r, include=FALSE}
+load("/neliti/data neliti.rda")
+```
+
 Tercatat ada
 
 #### Situs `SINTA`
