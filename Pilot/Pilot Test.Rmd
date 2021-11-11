@@ -1,0 +1,117 @@
+---
+title: "UPDATE PILOT PROJECT"
+subtitle: |
+  | Web Scraping Terhadap Keyword Bioteknologi
+author: |
+  | Ikang Fadhli
+  | Nutrifood Indonesia
+date: "`r format(Sys.time(), '%d %B %Y')`"
+fontsize: 12pt
+mainfont: Calibri
+sansfont: Calibri
+monofont: Calibri
+dev: png
+output: 
+  pdf_document:
+    number_sections: true
+    toc: false
+    toc_depth: 5
+    fig_width: 7
+    fig_height: 4
+    fig_caption: true
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls())
+
+setwd("~/AIPG-Gamma/Pilot")
+
+library(dplyr)
+library(ggplot2)
+```
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+# PENDAHULUAN
+
+## Latar Belakang
+
+Komite Gama memiliki kebutuhan untuk melakukan inventarisasi terhadap:
+
+1. Kegiatan pendidikan (formal atau non-formal). Termasuk program pendidikan yang telah dilakukan atau akan direncanakan.
+1. Kegiatan penelitian (riset dan inovasi). Termasuk program pendidikan yang telah dilakukan atau akan direncanakan.
+
+pada sektor __produksi pangan__, __rantai pasokan pangan__, dan __konsumsi pangan__.
+
+## Masalah
+
+Informasi terkait kegiatan-kegiatan di atas tersebar di berbagai situs seperti pada portal:
+
+1. Neliti^[https://www.neliti.com/].
+1. BRIN^[https://www.brin.go.id/].
+1. SINTA^[https://sinta.ristekbrin.go.id/].
+1. dan berbagai situs lainnya.
+
+Bagaimana cara kita bisa mendokumentasikan data kegiatan-kegiatan yang ada pada situs-situs tersebut?
+
+## Tujuan
+
+Melakukan _big data mining_ untuk mendokumentasikan kegiatan-kegiatan di situs-situs tersebut sekaligus membuat _data base_ yang _reliable_ terhadap topik terkait.
+
+\newpage
+
+# METODE
+
+## _Web Scraping_
+
+Metode yang akan digunakan dalam _big data mining_ kali ini adalah _web scraping_, yakni mengambil data yang terlihat secara visual pada suatu situs dengan cara melakukan _parsing html file_. 
+
+Untuk melakukan itu, saya membuat _custom algorithm_ persitus yang dituju menggunakan bahasa pemrograman __R__.
+
+## _Data Carpentry_
+
+Data yang diambil dari _web scraping_ akan dibersihkan dan dibuat konsisten baik struktur dan formatnya. Data akan diekspor dalam bentuk tabel Microsoft Excel.
+
+\newpage
+
+# _PILOT PROJECT_
+
+Saya akan mencoba mengambil beberapa data yang relevan terkait suatu _keyword_ pada _pilot project_ ini. 
+
+## _Keyword_ yang Digunakan
+
+_Keyword_ yang digunakan pada _pilot project_ ini adalah __bioteknologi__.
+
+## Hasil _Big Data Mining_
+
+Berikut adalah hasil penelusuran _keyword_ __bioteknologi__.
+
+### Kegiatan Penelitian
+
+Hasil penelusuran pada kegiatan penelitian di bidang __bioteknologi__ saya dapatkan dengan cara mencari _keyword_ tersebut di situs __neliti__^[https://www.neliti.com/] dan __SINTA__^[https://sinta.ristekbrin.go.id/].
+
+#### Situs `neliti`
+
+Pada situs ini, saya spesifik akan mencari __jurnal__ yang terkait dengan _keyword_. Sebagai contoh:
+
+```{r out.width="65%",echo=FALSE,fig.align='center',fig.retina=10,fig.cap="Contoh Halaman Depan dari Situs Jurnal Hasil Penelusuran di neliti"}
+knitr::include_graphics("contoh1.png")
+```
+
+Informasi yang akan diambil dari halaman situs tersebut antara lain:
+
+1. Judul,
+1. Penulis,
+1. Tahun penerbitan,
+1. Abstrak,
+1. _Link_ situs.
+
+Tercatat ada
