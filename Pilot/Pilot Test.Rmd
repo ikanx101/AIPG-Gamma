@@ -96,7 +96,7 @@ Berikut adalah hasil penelusuran _keyword_ __bioteknologi__.
 
 ### Kegiatan Penelitian
 
-Hasil penelusuran pada kegiatan penelitian di bidang __bioteknologi__ saya dapatkan dengan cara mencari _keyword_ tersebut di situs __neliti__^[https://www.neliti.com/] dan __SINTA__^[https://sinta.ristekbrin.go.id/].
+Hasil penelusuran pada kegiatan penelitian di bidang __bioteknologi__ saya dapatkan dengan cara mencari _keyword_ tersebut di situs __neliti__^[https://www.neliti.com/] dan __SINTA__^[https://sinta.ristekbrin.go.id/]. Semua jurnal yang muncul akan saya ambil informasinya sebagai bukti pelaksanaan riset dan inovasi terkait _keyword_ tersebut.
 
 #### Situs `neliti`
 
@@ -115,3 +115,9 @@ Informasi yang akan diambil dari halaman situs tersebut antara lain:
 1. _Link_ situs.
 
 Tercatat ada
+
+#### Situs `SINTA`
+
+### Kegiatan Penelitian
+
+#### Situs `BRIN`
