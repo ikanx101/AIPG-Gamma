@@ -1,2 +1,2 @@
-# AIPG-Gammar
+# AIPG-Gamma
 Scraper
