@@ -20,6 +20,11 @@ output:
     fig_height: 4
     fig_caption: true
     highlight: tango
+header-includes:
+- \DeclareUnicodeCharacter{2212}{-}
+- \usepackage{lscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
 ---
 
 ```{r setup, include=FALSE}
@@ -115,21 +120,58 @@ Informasi yang akan diambil dari halaman situs tersebut antara lain:
 1. _Link_ situs.
 
 ```{r, include=FALSE}
-load("/neliti/neliti.rda")
+load("~/AIPG-Gamma/Pilot/neliti/neliti.rda")
 ```
 
 Pada saat saya melakukan _web scraping_ pada `11 November 2021 17:20 WIB`, tercatat ada `r nrow(data_neliti)` buah jurnal di situs `neliti`. 
-
-```{r,echo=FALSE,warning=FALSE,warning=FALSE}
-data_neliti %>%
-  head(5) %>%
-  
-```
 
 Data hasil _web scraping_ terlampir.
 
 #### Situs `SINTA`
 
-### Kegiatan Penelitian
+Pada situs SINTA, saya akan spesifik mencari jurnal yang terkait _keyword_. Berikut adalah hasil pencariannya:
+
+```{r out.width="85%",echo=FALSE,fig.align='center',fig.retina=10,fig.cap="Contoh Halaman Depan dari Situs SINTA Hasil Penelusuran"}
+knitr::include_graphics("contoh2.png")
+rm(list=ls())
+load("~/AIPG-Gamma/Pilot/sinta/sinta.rda")
+```
+
+Informasi yang akan diambil dari halaman situs tersebut antara lain:
+
+1. Judul,
+1. Penulis,
+1. Nama jurnal,
+1. Berapa banyak tersitasi,
+1. _Link_ situs.
+
+Pada saat saya melakukan _web scraping_ pada `11 November 2021 21:57 WIB`, tercatat ada `r nrow(data_sinta_clean)` buah jurnal di situs `SINTA`. 
+
+Data hasil _web scraping_ terlampir.
+
+### Kegiatan Lainnya
+
+Salah satu kesulitan yang dihadapi adalah pada saat mencari informasi seputar kegiatan pendidikan formal atau non formal (pelatihan). Sebagai iterasi pertama, saya akan coba menelusuri _keyword_ di situs `BRIN` dan mengambil semua artikel atau berita terkait.
 
 #### Situs `BRIN`
+
+Berikut adalah hasil penelusuran _keyword_ di situs `BRIN`:
+
+```{r out.width="85%",echo=FALSE,fig.align='center',fig.retina=10,fig.cap="Contoh Halaman Depan dari Situs BRIN Hasil Penelusuran"}
+knitr::include_graphics("contoh3.png")
+load("~/AIPG-Gamma/Pilot/brin/brin.rda")
+```
+
+Informasi yang akan saya ambil adalah:
+
+1. Judul artikel,
+1. Tanggal artikel,
+1. Isi artikel.
+
+Kelak kita akan coba pilah, apakah ada unsur pendidikan formal, __pelatihan__ atau ___training___ dari artikel tersebut.
+
+Pada saat saya melakukan _web scraping_ pada `11 November 2021 22:21 WIB`, tercatat ada `r nrow(artikel_final)` buah artikel di situs `BRIN`. 
+
+Dari data tersebut, akan saya beri tanda mana saja artikel yang memiliki kata `pelatihan`, `pendidikan`, dan `training`.
+
+Data hasil _web scraping_ terlampir.
