@@ -1,0 +1,27 @@
+---
+title: "HASIL DATA MINING"
+subtitle: "Keyword Terkait Indigenous Food"
+author: "Ikang Fadhli"
+institute: "Nutrifood Indonesia"
+date: "`r format(Sys.time(), '%d %B %Y')"
+output:
+  beamer_presentation:
+   slide_level: 2
+   theme: "CambridgeUS"
+   colortheme: "orchid"
+   fonttheme: "structurebold"
+classoption: "aspectratio=169"
+toc: false
+---
+
+```{r,include=FALSE}
+rm(list=ls())
+library(dplyr)
+library(ggplot2)
+```
+
+# PENDAHULUAN
+
+# HASIL
+
+# DISKUSI
