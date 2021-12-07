@@ -5,7 +5,7 @@ library(dplyr)
 library(rvest)
 library(stringr)
 
-url = paste0("https://www.brin.go.id/page/",1:17,"/?s=makanan")
+url = paste0("https://www.brin.go.id/page/",1:5,"/?s=minuman")
 
 link = c()
 for(i in 1:length(url)){
@@ -42,4 +42,4 @@ for(i in 1:length(link)){
 
 artikel_final = do.call(rbind,artikel)
 
-save(link,artikel_final,file = "makanan.rda")
+save(link,artikel_final,file = "minuman.rda")
