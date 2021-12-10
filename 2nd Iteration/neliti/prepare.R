@@ -10,7 +10,9 @@ options(warn = -1)
 
 # ==============================
 # ambil stopwords dulu
-stop_id = readLines("https://raw.githubusercontent.com/ikanx101/ID-Stopwords/master/id.stopwords.02.01.2016.txt")
+sensor1 = readLines("https://raw.githubusercontent.com/ikanx101/ID-Stopwords/master/id.stopwords.02.01.2016.txt")
+sensor2 = stopwords::stopwords("en")
+sensor = c(sensor1,sensor2)
 
 # ==============================
 # ambil path
@@ -20,17 +22,41 @@ rda_s = paste0(path_rda,"/",rda_s)
 n_rda = length(rda_s)
 
 rekap_all = data.frame()
+z = 1
 
+# gabung semua data
 for(i in 1:n_rda){
   print(paste0("Ambil data: ",rda_s[i]))
   load(rda_s[i])
   for(k in 1:length(hasil)){
-    print(paste0("Processing ke ",k))
+    print(paste0("Processing ke ",z))
+    z = z + 1
     temp = hasil[[k]]
     if(is.data.frame(temp)){rekap_all = rbind(rekap_all,temp)}
   }
 }
 
+# kita rapihin dulu
+rekap_all = 
+  rekap_all %>%
+  distinct() %>%
+  filter(!is.na(judul)) %>%
+  mutate(judul = tolower(judul),
+         author = tolower(author))
+rekap_all$id = 1:nrow(rekap_all)
+
+# bikin wc dari judul
+judul_wc = 
+  rekap_all %>%
+  select(id,judul) %>%
+  unnest_tokens('words',judul) %>%
+  filter(!words %in% sensor) %>%
+  count(words,sort = T)
+
+judul_wc %>% head(10) %>% print()
+
+# ngesave dulu
+save(judul_wc,file = "judul_wc.rda")
 
 waktu = Sys.time() - start
 waktu = waktu %>% round(5)

@@ -1,6 +1,6 @@
 ---
 title: "HASIL DATA MINING"
-subtitle: "Keyword Terkait Indigenous Food"
+subtitle: "Terkait Keywords Tertentu"
 author: "Ikang Fadhli"
 institute: "Nutrifood Indonesia"
 date: "`r format(Sys.time(), '%d %B %Y')`"
@@ -29,7 +29,7 @@ Setelah _pilot project_ dan diskusi yang lalu, berikutnya akan dicoba melakukan 
 
 ## Tujuan
 
-Kali ini ini, saya mencoba untuk mencari tiga _keywords_ utama berikut:
+Kali ini ini, saya mencoba untuk mencari empat _keywords_ utama berikut:
 
 - _Indigenous Food_,
 - Pangan lokal,
@@ -37,6 +37,7 @@ Kali ini ini, saya mencoba untuk mencari tiga _keywords_ utama berikut:
 - _Fermented Food_.
 
 di beberapa portal penelitian (seperti BRIN, neliti, dan SINTA) dan situs _web_ universitas (seperti UI, IPB, ITB, UNPAD, dan UGM). 
+
 Dari hasil temuan yang ada, kita akan coba kembangkan _keywords_ apa lagi yang mungkin akan muncul.
 
 ## Metode
@@ -64,15 +65,4 @@ nomnoml::nomnoml("#direction: right
 
 # HASIL
 
-## Berita dari Situs BRIN
-
-Pada `3 Desember 2021 17:28`, ditemukan:
-
-- 0 buah artikel terkait _keyword_ `indigenous food`.
-- 118 buah artikel terkait _keyword_ `pangan lokal`.
-- 1 buah artikel terkait _keyword_ `functional food`.
-- 0 buah artikel terkait _keyword_ `fermented food`.
-
-# DISKUSI
-
-
+## _Data Mining_ Situs `neliti`
