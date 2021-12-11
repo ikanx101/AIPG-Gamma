@@ -64,4 +64,5 @@ nomnoml::nomnoml("#direction: right
 
 # HASIL
 
-## _Data Mining_ Situs `neliti`
+## _Data Mining_ Situs `www.neliti.com`
+
