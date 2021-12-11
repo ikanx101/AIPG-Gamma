@@ -32,6 +32,7 @@ for(i in 1:n_rda){
     print(paste0("Processing ke ",z))
     z = z + 1
     temp = hasil[[k]]
+    temp$keyword = rda_s[i]
     if(is.data.frame(temp)){rekap_all = rbind(rekap_all,temp)}
   }
 }
