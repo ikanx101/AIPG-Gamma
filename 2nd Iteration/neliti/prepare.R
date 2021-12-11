@@ -53,7 +53,7 @@ judul_wc =
   filter(!words %in% sensor) %>%
   count(words,sort = T)
 
-judul_wc %>% head(10) %>% print()
+judul_wc %>% head(15) %>% print()
 
 # ngesave dulu
 save(judul_wc,file = "judul_wc.rda")
