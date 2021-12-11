@@ -17,7 +17,7 @@ sensor = c(sensor1,sensor2)
 # ==============================
 # ambil path
 path_rda = "~/AIPG-Gamma/2nd Iteration/neliti/rda"
-rda_s = list.files(path_rda)
+rda_s = c("functional food.rda","fermented food.rda","indigenous food.rda","pangan lokal.rda")
 rda_s = paste0(path_rda,"/",rda_s)
 n_rda = length(rda_s)
 
@@ -60,10 +60,11 @@ judul_wc =
 
 judul_wc %>% head(15) %>% print()
 
-judul_all = judul_wc
+rekap_key_utama = rekap_all
+judul_key_utama = judul_wc
 
 # ngesave dulu
-save(rekap_all,judul_all,file = "judul_all.rda")
+save(rekap_key_utama,judul_key_utama,file = "judul_utama.rda")
 
 waktu = Sys.time() - start
 waktu = waktu %>% round(5)

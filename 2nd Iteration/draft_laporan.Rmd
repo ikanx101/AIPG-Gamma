@@ -18,6 +18,8 @@ toc: false
 rm(list=ls())
 library(dplyr)
 library(ggplot2)
+
+load("judul_utama.rda")
 ```
 
 # PENDAHULUAN
@@ -66,11 +68,4 @@ nomnoml::nomnoml("#direction: right
 
 ## _Data Mining_ Situs `www.neliti.com`
 
-Pada saat memasukkan _keywords_ berikut:
 
-- _Indigenous Food_,
-- _Functional Food_, dan
-- _Fermented Food_.
-- 
-
-terkait pada situs `www.neliti.com`
