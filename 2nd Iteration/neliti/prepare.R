@@ -44,9 +44,13 @@ rekap_all =
   filter(!is.na(judul)) %>%
   mutate(judul = tolower(judul),
          author = tolower(author)) %>%
+  distinct() %>% 
   group_by(judul,author) %>%
   summarise(keyword = paste(keyword,collapse = ",")) %>%
-  ungroup()
+  ungroup() %>% 
+  mutate(keyword = gsub("~/AIPG-Gamma/2nd Iteration/neliti/rda/","",keyword),
+         keyword = gsub(".rda","",keyword)) %>% 
+  distinct()
 
 rekap_all$id = 1:nrow(rekap_all)
 
@@ -63,7 +67,7 @@ judul_wc %>% head(15) %>% print()
 judul_all = judul_wc
 
 # ngesave dulu
-save(rekap_all,judul_all,file = "judul_all.rda")
+save(rekap_all,judul_all,file = "~/AIPG-Gamma/2nd Iteration/judul_all.rda")
 
 waktu = Sys.time() - start
 waktu = waktu %>% round(5)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  13 DEC 2021 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.1)  13 DEC 2021 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -95,8 +95,8 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen160
 \Gm@layoutvoffset=\dimen161
 \Gm@dimlist=\toks17
-) (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+) (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 ) (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty 
 (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -737,20 +737,20 @@ ty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 ) (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2021/12/02 v3.0a Micro-typographical refinements (RS)
+Package: microtype 2021/12/10 v3.0b Micro-typographical refinements (RS)
 \MT@toks=\toks47
 \MT@count=\count335
 \MT@tempbox=\box76
-LaTeX Info: Redefining \leftprotrusion on input line 1006.
-LaTeX Info: Redefining \rightprotrusion on input line 1014.
-LaTeX Info: Redefining \textls on input line 1182.
+LaTeX Info: Redefining \leftprotrusion on input line 1010.
+LaTeX Info: Redefining \rightprotrusion on input line 1018.
+LaTeX Info: Redefining \textls on input line 1173.
 \MT@outer@kern=\dimen288
-LaTeX Info: Redefining \textmicrotypecontext on input line 1768.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1759.
 \MT@listname@count=\count336
 
 (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.de
 f
-File: microtype-pdftex.def 2021/12/02 v3.0a Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2021/12/10 v3.0b Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 897.
 LaTeX Info: Redefining \lslig on input line 897.
@@ -758,7 +758,7 @@ LaTeX Info: Redefining \lslig on input line 897.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2021/12/02 v3.0a microtype main configuration file (RS)
+File: microtype.cfg 2021/12/10 v3.0b microtype main configuration file (RS)
 ))
 (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.de
 f
@@ -768,24 +768,24 @@ File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 ) (./draft_laporan.aux)
 \openout1 = `draft_laporan.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -794,23 +794,23 @@ LaTeX Font Info:    ... okay on input line 114.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(10.95pt, 433.34409pt, 10.95pt)
+* h-part:(L,W,R)=(10.0pt, 435.24408pt, 10.0pt)
 * v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
 * \paperwidth=455.24408pt
 * \paperheight=256.0748pt
-* \textwidth=433.34409pt
+* \textwidth=435.24408pt
 * \textheight=227.62207pt
-* \oddsidemargin=-61.31999pt
-* \evensidemargin=-61.31999pt
+* \oddsidemargin=-62.26999pt
+* \evensidemargin=-62.26999pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=14.22636pt
-* \marginparwidth=4.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -830,7 +830,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 114.
+Package hyperref Info: Link coloring OFF on input line 115.
 (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -842,59 +842,59 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count338
 )
-LaTeX Info: Redefining \ref on input line 114.
-LaTeX Info: Redefining \pageref on input line 114.
-LaTeX Info: Redefining \nameref on input line 114.
+LaTeX Info: Redefining \ref on input line 115.
+LaTeX Info: Redefining \pageref on input line 115.
+LaTeX Info: Redefining \nameref on input line 115.
 (./draft_laporan.out) (./draft_laporan.out)
 \@outlinefile=\write5
 \openout5 = `draft_laporan.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 114.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 115.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 114.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 115.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 114.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 115.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 114.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 115.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 114.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 114.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 115.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 114.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 114.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 114.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 115.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 114.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 114.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 114.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 115.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 114.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 114.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 114.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 115.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 114.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 114.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 115.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 114.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 115.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 114.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 114.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 114.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 114.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 114.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 114.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 115.
 
 (/home/ikanx_server/.TinyTeX/texmf-dist/tex/latex/translator/translator-basic-d
 ictionary-English.dict
@@ -920,12 +920,12 @@ Dictionary: translator-numbers-dictionary, Language: English
 -dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 114.
-Package microtype Info: Applying patch `item' on input line 114.
-Package microtype Info: Applying patch `toc' on input line 114.
-Package microtype Info: Applying patch `eqnum' on input line 114.
+LaTeX Info: Redefining \microtypecontext on input line 115.
+Package microtype Info: Applying patch `item' on input line 115.
+Package microtype Info: Applying patch `toc' on input line 115.
+Package microtype Info: Applying patch `eqnum' on input line 115.
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 114.
+Package microtype Warning: Unable to apply patch `footnote' on input line 115.
 
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -933,7 +933,7 @@ Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 114.
+LaTeX Info: Redefining \showhyphens on input line 115.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -946,8 +946,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 {/home/ikanx_server/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 129.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 130.
 [3
 
 ]
@@ -962,7 +962,7 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 177.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 183.
 
 [5
 
@@ -975,21 +975,47 @@ File: draft_laporan_files/figure-beamer/unnamed-chunk-2-1.pdf Graphic file (typ
 e pdf)
 <use draft_laporan_files/figure-beamer/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: draft_laporan_files/figure-beamer/unnamed-chunk-2-1.pd
-f  used on input line 197.
-(pdftex.def)             Requested size: 433.34178pt x 58.50517pt.
+f  used on input line 203.
+(pdftex.def)             Requested size: 435.18411pt x 58.7539pt.
 [7
 
  <./draft_laporan_files/figure-beamer/unnamed-chunk-2-1.pdf>] [8
 
-] [9
-
 ]
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 210.
+<draft_laporan_files/figure-beamer/unnamed-chunk-3-1.pdf, id=143, 722.7pt x 252
+.945pt>
+File: draft_laporan_files/figure-beamer/unnamed-chunk-3-1.pdf Graphic file (typ
+e pdf)
+<use draft_laporan_files/figure-beamer/unnamed-chunk-3-1.pdf>
+Package pdftex.def Info: draft_laporan_files/figure-beamer/unnamed-chunk-3-1.pd
+f  used on input line 218.
+(pdftex.def)             Requested size: 435.24438pt x 152.33553pt.
+[9
+
+ <./draft_laporan_files/figure-beamer/unnamed-chunk-3-1.pdf>]
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <5> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 222.
 
 [10
 
 ] [11
+
+]
+<draft_laporan_files/figure-beamer/unnamed-chunk-4-1.pdf, id=186, 722.7pt x 361
+.35pt>
+File: draft_laporan_files/figure-beamer/unnamed-chunk-4-1.pdf Graphic file (typ
+e pdf)
+<use draft_laporan_files/figure-beamer/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: draft_laporan_files/figure-beamer/unnamed-chunk-4-1.pd
+f  used on input line 240.
+(pdftex.def)             Requested size: 435.24438pt x 217.6222pt.
+
+Overfull \vbox (32.22192pt too high) detected at line 240
+ []
+
+[12
+
+ <./draft_laporan_files/figure-beamer/unnamed-chunk-4-1.pdf>] [13
 
 ]
 \tf@nav=\write6
@@ -1006,11 +1032,11 @@ Package rerunfilecheck Info: File `draft_laporan.out' has not changed.
 (rerunfilecheck)             Checksum: 60E5FD530C87F9745390345BB4F5AB1C;424.
  ) 
 Here is how much of TeX's memory you used:
- 22677 strings out of 480559
- 426895 string characters out of 5902712
- 739149 words of memory out of 5000000
- 39746 multiletter control sequences out of 15000+600000
- 440807 words of font info for 70 fonts, out of 8000000 for 9000
+ 22696 strings out of 480559
+ 427725 string characters out of 5902712
+ 739156 words of memory out of 5000000
+ 39759 multiletter control sequences out of 15000+600000
+ 440371 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,15n,108p,1010b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/ikanx_server/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</home/i
@@ -1021,10 +1047,10 @@ X/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></home/ikanx_server/.TinyTeX/te
 xmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/ikanx_server/.TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmsso10.pfb></home/ikanx_server/.TinyTeX/texmf-dist/
 fonts/type1/public/lm/lmtt10.pfb>
-Output written on draft_laporan.pdf (11 pages, 341445 bytes).
+Output written on draft_laporan.pdf (13 pages, 357901 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 24792 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 252 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 24802 words of extra memory for PDF output out of 24883 (max. 10000000)
 

@@ -12,13 +12,14 @@ output:
    fonttheme: "structurebold"
 classoption: "aspectratio=169"
 toc: false
+fontsize: 10pt
 ---
 
 ```{r,include=FALSE}
 rm(list=ls())
 library(dplyr)
 library(ggplot2)
-
+library(ggwordcloud)
 load("judul_all.rda")
 ```
 
@@ -48,7 +49,9 @@ di situs `www.neliti.com` sebagai uji coba untuk melakukan analisa teks yang did
 
 Pengambilan data akan menggunakan algoritma _web scraping_ dengan bahasa pemrograman __R__ menggunakan _virtual machine_ milik _Google Cloud_.
 
-Situs yang dijadikan rujukan data adalah [www.neliti.com](https://www.neliti.com/id/). Data yang akand diambil antara lain: judul penelitian dan _author_ (termasuk _link_ rujukan).
+Situs yang dijadikan rujukan data adalah [www.neliti.com](https://www.neliti.com/id/). Data yang akan diambil antara lain: judul penelitian dan _author_ (termasuk _link_ rujukan).
+
+__Catatan penting:__ hasil pencarian yang didapatkan murni berdasarkan output yang didapatkan dari situs neliti. Tidak ada jaminan bahwa semua penelitian tersebut selalu berkaitan penuh secara konten dengan _keywords_ yang digunakan.
 
 ## Metode (_Text Analysis_)
 
@@ -75,14 +78,61 @@ nomnoml::nomnoml("#direction: right
 
 ## Hasil Data Mining
 
-Pada situs [www.neliti.com](https://www.neliti.com/id/), didapatkan ada `r nrow(judul_all)/1000 %>% round(3)` buah _unique_ penelitian hasil pencarian _keywords_.
+Pada situs [www.neliti.com](https://www.neliti.com/id/), didapatkan ada `r nrow(judul_all)/1000 %>% round(3)` buah _unique_ penelitian hasil pencarian _keywords_. Tentunya bisa jadi satu judul penelitian keluar dari hasil pencarian lebih dari satu _keywords_. Berikut adalah grafik dari 14 _keywords_ (dan kombinasi _keywords_) teratas berdasarkan banyaknya penelitian:
 
-```{r,echo=FALSE}
-
+```{r,echo=FALSE,fig.height=3.5,fig.width=10}
+rekap_all %>% 
+   group_by(keyword) %>% 
+   tally() %>% 
+   ungroup() %>% 
+   arrange(desc(n)) %>% 
+   filter(n>30) %>% 
+   ggplot(aes(x = reorder(keyword,n),
+              y = n)) +
+   geom_col(color = "black",fill = "steelblue") +
+   geom_label(aes(label = n),size = 2) +
+   coord_flip() +
+   ylim(0,2700) +
+   labs(title = "Berapa banyak penelitian yang didapatkan dari keywords ... ?",
+        subtitle = "Hasil Data Mining Situs www.neliti.com",
+        y = "Banyak judul penelitian",
+        x = "Keywords terkait") +
+   theme_minimal() +
+   theme(axis.text.x = element_blank())
 ```
-
 
 # _TEXT ANALYSIS_: _Keywords_ Lain
 
-## Ek
+## Mencari _Keywords_ Lain
+
+Untuk mencari _keywords_ lainnya, saya akan kumpulkan semua judul penelitian hasil pencarian lalu akan dihitung kata apa saja yang paling sering muncul. 
+
+Perlu diperhatikan bahwa kata sambung, kata depan, dan _stopwords_ akan dihapus dari analisa ini. 
+
+## Mencari _Keywords_ Lain
+
+Kata dan frekuensi kemunculannya disajikan dalam bentuk _wordcloud_ berikut ini:
+
+```{r,echo=FALSE,fig.height=5,fig.width=10}
+wc = 
+   judul_all %>% 
+   filter(n>110) %>% 
+   filter(words != "l")
+wc %>% 
+   ggplot() + 
+   geom_text_wordcloud_area(aes(label = words, size = n,color = n)) +
+   scale_size_area(max_size = 15) +
+   scale_color_gradient(high = "darkred",low = "blue") +
+   theme_minimal()
+```
+
+## Mencari _Keywords_ Lain
+
+
+
+## lala
+
+
+
+
 
