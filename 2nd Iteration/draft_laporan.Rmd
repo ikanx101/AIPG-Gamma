@@ -70,7 +70,7 @@ nomnoml::nomnoml("#direction: right
 	[Wordcloud] -> update keyword [data mining]
 	[Wordcloud] -> [topik judul]
 	[topik judul] -> [biterm|classification]
-	[biterm] [<end>end]
+	[biterm] -> [<end>end]
                  ")
 ```
 
