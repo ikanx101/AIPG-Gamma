@@ -16,7 +16,7 @@ sensor = c(sensor1,sensor2)
 
 # ==============================
 # ambil path
-path_rda = "/home/ix/AIPG-Gamma/2nd Iteration/neliti/rda/"
+path_rda = "~/AIPG-Gamma/2nd Iteration/neliti/rda/"
 rda_s = list.files(path_rda)
 rda_s = paste0(path_rda,rda_s)
 n_rda = length(rda_s)

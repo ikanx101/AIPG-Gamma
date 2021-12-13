@@ -1,6 +1,6 @@
 ---
 title: "HASIL DATA MINING"
-subtitle: "Terkait Keywords Tertentu di Situs neliti.com"
+subtitle: "Terkait Penelitian"
 author: "Ikang Fadhli"
 institute: "Nutrifood Indonesia"
 date: "`r format(Sys.time(), '%d %B %Y')`"
@@ -28,7 +28,7 @@ load("judul_all.rda")
 
 Setelah _pilot project_ dan diskusi yang lalu, berikutnya akan dicoba melakukan _data mining_ kembali dengan menggunakan _keywords_ yang berbeda dan lebih spesifik. 
 
-Pada kesempatan ini, saya akan kembali mencari berbagai penilitan yang telah dilakukan di dalam negeri terkait dengan beberapa _keywords_ yang telah didefinisikan.
+Pada kesempatan ini, saya akan kembali mencari __berbagai penelitian yang telah dilakukan di dalam negeri__ terkait dengan beberapa _keywords_ yang telah didefinisikan.
 
 ## Tujuan
 
@@ -44,9 +44,13 @@ Kali ini ini, saya mencoba untuk mencari berbagai penelitian terkait _keywords_ 
 
 di situs `www.neliti.com` sebagai uji coba untuk melakukan analisa teks yang didapatkan. Dari hasil temuan yang ada, kita akan coba kembangkan _keywords_ apa lagi yang mungkin akan muncul. Pada kesempatan mendatang, akan dilakukan _data mining_ kembali untuk berbagai situs seperti _repository_ perpustakaan berbagai universitas untuk mendapatkan gambaran penelitian yang telah dilakukan di universitas-universitas tersebut.
 
-## Metode
+## Metode (_Data Mining_ / _Web Scraping_)
 
 Pengambilan data akan menggunakan algoritma _web scraping_ dengan bahasa pemrograman __R__ menggunakan _virtual machine_ milik _Google Cloud_.
+
+Situs yang dijadikan rujukan data adalah [www.neliti.com](https://www.neliti.com/id/). Data yang akand diambil antara lain: judul penelitian dan _author_ (termasuk _link_ rujukan).
+
+## Metode (_Text Analysis_)
 
 Selanjutnya akan dilakukan beberapa _text analysis_ seperti:
 
@@ -59,16 +63,26 @@ Selanjutnya akan dilakukan beberapa _text analysis_ seperti:
 nomnoml::nomnoml("#direction: right
                  [Web] -> [Data mining]
                  [Data mining] -> [Data Teks]
-                 [Data Teks] -> [Teks Analisis]
-                 [Teks Analisis] -> [Eksplor Keyword Lain]
-                 [Teks Analisis] -> [Topik Teks]
+                 [Data Teks] -> [Text Analysis]
+                 [Text Analysis] -> [Eksplor Keyword Lain]
+                 [Text Analysis] -> [Topik Teks]
                  [Eksplor Keyword Lain] -> [Wordcloud]
                  [Topik Teks] -> [Biterm Classification]
                  ")
 ```
 
-# HASIL
+# HASIL DATA MINING
 
-## _Data Mining_ Situs `www.neliti.com`
+## Hasil Data Mining
 
+Pada situs [www.neliti.com](https://www.neliti.com/id/), didapatkan ada `r nrow(judul_all)/1000 %>% round(3)` buah _unique_ penelitian hasil pencarian _keywords_.
+
+```{r,echo=FALSE}
+
+```
+
+
+# _TEXT ANALYSIS_: _Keywords_ Lain
+
+## Ek
 
