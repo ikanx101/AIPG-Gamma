@@ -6,7 +6,7 @@ library(rvest)
 library(stringr)
 library(tidyr)
 
-path = "~/AIPG-Gamma/2nd Iteration/neliti/txt/"
+path = "/home/ix/AIPG-Gamma/2nd Iteration/neliti/txt/"
 nama_file = list.files(path)
 nama_file = paste0(path,nama_file)
 
@@ -54,7 +54,7 @@ for(k in 1:length(nama_file)){
   } 
   
   nama_rda = gsub(".txt","",nama_file[k])
-  nama_rda = gsub("~/AIPG-Gamma/2nd Iteration/neliti/","",nama_rda)
+  nama_rda = gsub("/home/ix/AIPG-Gamma/2nd Iteration/neliti/","",nama_rda)
   save(hasil,file = paste0(nama_rda,".rda"))
   print("DONE")
 }

@@ -64,13 +64,13 @@ Selanjutnya akan dilakukan beberapa _text analysis_ seperti:
 
 ```{r,echo=FALSE}
 nomnoml::nomnoml("#direction: right
-                 [Web] -> [Data mining]
-                 [Data mining] -> [Data Teks]
-                 [Data Teks] -> [Text Analysis]
-                 [Text Analysis] -> [Eksplor Keyword Lain]
-                 [Text Analysis] -> [Topik Teks]
-                 [Eksplor Keyword Lain] -> [Wordcloud]
-                 [Topik Teks] -> [Biterm Classification]
+        [<start>start] -> [define|initial keyword|web]
+	[define] -> [data mining|ambil judul]
+	[data mining] -> [Wordcloud|Eksplor Keyword Lain]
+	[Wordcloud] -> update keyword [data mining]
+	[Wordcloud] -> [topik judul]
+	[topik judul] -> [biterm|classification]
+	[biterm] [<end>end]
                  ")
 ```
 
