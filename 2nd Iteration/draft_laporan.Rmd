@@ -19,7 +19,7 @@ rm(list=ls())
 library(dplyr)
 library(ggplot2)
 
-load("judul_utama.rda")
+load("judul_all.rda")
 ```
 
 # PENDAHULUAN
@@ -28,18 +28,21 @@ load("judul_utama.rda")
 
 Setelah _pilot project_ dan diskusi yang lalu, berikutnya akan dicoba melakukan _data mining_ kembali dengan menggunakan _keywords_ yang berbeda dan lebih spesifik. 
 
+Pada kesempatan ini, saya akan kembali mencari berbagai penilitan yang telah dilakukan di dalam negeri terkait dengan beberapa _keywords_ yang telah didefinisikan.
+
 ## Tujuan
 
-Kali ini ini, saya mencoba untuk mencari empat _keywords_ utama berikut:
+Kali ini ini, saya mencoba untuk mencari berbagai penelitian terkait _keywords_ berikut:
 
-- _Indigenous Food_,
-- Pangan lokal,
-- _Functional Food_, dan
-- _Fermented Food_.
+- _Indigenous Food_ (termasuk padanan dalam bahasa Indonesianya: pangan lokal),
+- _Functional Food_,
+- _Fermented Food_ (termasuk padanan dalam bahasa Indonesianya: makanan fermentasi),
+- _Ethnic Food_ (termasuk padanan dalam bahasa Indonesianya: makanan etnik),
+- _Traditional Food_ (termasuk padanan dalam bahasa Indonesianya: makanan tradisional),
+- Makanan,
+- Minuman
 
-di situs `www.neliti.com` sebagai _pilot_ untuk melakukan analisa teks yang didapatkan. Dari hasil temuan yang ada, kita akan coba kembangkan _keywords_ apa lagi yang mungkin akan muncul.
-
-Pada kesempatan mendatang, akan dilakukan _data mining_ kembali untuk berbagai situs seperti _repository_ perpustakaan berbagai universitas untuk mendapatkan gambaran penelitian yang telah dilakukan di universitas-universitas tersebut.
+di situs `www.neliti.com` sebagai uji coba untuk melakukan analisa teks yang didapatkan. Dari hasil temuan yang ada, kita akan coba kembangkan _keywords_ apa lagi yang mungkin akan muncul. Pada kesempatan mendatang, akan dilakukan _data mining_ kembali untuk berbagai situs seperti _repository_ perpustakaan berbagai universitas untuk mendapatkan gambaran penelitian yang telah dilakukan di universitas-universitas tersebut.
 
 ## Metode
 

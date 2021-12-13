@@ -6,7 +6,7 @@ library(rvest)
 library(stringr)
 library(tidyr)
 
-nama_file = "functional food.txt"
+nama_file = "makanan tradisional.txt"
 link = readLines(nama_file)
 
 scrape_donk = function(url){
