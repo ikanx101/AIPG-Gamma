@@ -3,7 +3,7 @@ rm(list=ls())
 library(rvest)
 library(dplyr)
 
-url = paste0("https://www.neliti.com/id/search?q=makanan%20tradisional&page=",1:11)
+url = paste0("https://www.neliti.com/id/search?q=tepung&page=",1:59)
 # url = "https://www.neliti.com/id/search?q=makanan+etnik"
 
 n_url = length(url)
@@ -19,5 +19,5 @@ for(i in 1:n_url){
   print(i)
 }
 
-links %>% writeLines("makanan tradisional.txt")
+links %>% writeLines("tepung.txt")
 print("DONE")

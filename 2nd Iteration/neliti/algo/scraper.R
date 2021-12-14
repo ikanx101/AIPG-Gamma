@@ -6,8 +6,9 @@ library(rvest)
 library(stringr)
 library(tidyr)
 
-path = "/home/ix/AIPG-Gamma/2nd Iteration/neliti/txt/"
+path = "/home/ix/AIPG-Gamma/2nd Iteration/neliti/txt plus/"
 nama_file = list.files(path)
+nama_rda = nama_file
 nama_file = paste0(path,nama_file)
 
 scrape_donk = function(url){
@@ -52,10 +53,8 @@ for(k in 1:length(nama_file)){
       names(hasil)[i] = link[i]
     }
   } 
-  
-  nama_rda = gsub(".txt","",nama_file[k])
-  nama_rda = gsub("/home/ix/AIPG-Gamma/2nd Iteration/neliti/","",nama_rda)
-  save(hasil,file = paste0(nama_rda,".rda"))
+   
+  save(hasil,file = paste0(nama_rda[k],".rda"))
   print("DONE")
 }
 
