@@ -1,6 +1,6 @@
 ---
-title: "HASIL DATA MINING"
-subtitle: "Terkait Penelitian"
+title: "EKSPLORASI HASIL DATA MINING"
+subtitle: "Text Analisis Terkait Penelitian"
 author: "Ikang Fadhli"
 institute: "Nutrifood Indonesia"
 date: "`r format(Sys.time(), '%d %B %Y')`"
@@ -18,8 +18,16 @@ fontsize: 10pt
 ```{r,include=FALSE}
 rm(list=ls())
 library(dplyr)
+library(tidyr)
 library(ggplot2)
 library(ggwordcloud)
+library(igraph)
+library(ggraph)
+library(tidyr)
+library(NLP)
+library(tm)
+library(topicmodels)
+library(tidytext)
 load("judul_all.rda")
 ```
 
@@ -47,7 +55,9 @@ di situs `www.neliti.com` sebagai uji coba untuk melakukan analisa teks yang did
 
 ## Metode (_Data Mining_ / _Web Scraping_)
 
-Pengambilan data akan menggunakan algoritma _web scraping_ dengan bahasa pemrograman __R__ menggunakan _virtual machine_ milik _Google Cloud_.
+\begin{alertblock}{Data Mining}
+Pengambilan data akan menggunakan algoritma $web$ $scraping$ dengan bahasa pemrograman $R$ menggunakan $virtual$ $machine$ milik $Google$ $Cloud$.
+\end{alertblock}
 
 Situs yang dijadikan rujukan data adalah [www.neliti.com](https://www.neliti.com/id/). Data yang akan diambil antara lain: judul penelitian dan _author_ (termasuk _link_ rujukan).
 
@@ -60,28 +70,28 @@ Selanjutnya akan dilakukan beberapa _text analysis_ seperti:
 1. _Word cloud_: untuk menemukan _keywords_ lain yang mungkin berkaitan dengan _keywords_ utama.
 1. _Biterm Topic Modelling_: untuk menentukan dan mengelompokkan judul artikel, penelitian, atau berita ke dalam topik-topik tertentu.
 
-## Metode (lanjutan)
+## Alur Kerja
 
 ```{r,echo=FALSE}
 nomnoml::nomnoml("#direction: right
         [<start>start] -> [define|initial keyword|web]
 	[define] -> [data mining|ambil judul]
 	[data mining] -> [Wordcloud|Eksplor Keyword Lain]
-	[Wordcloud] -> update keyword [data mining]
-	[Wordcloud] -> [topik judul]
+	[Wordcloud] --> [data mining]
+	[data mining] -> [topik judul]
 	[topik judul] -> [biterm|classification]
 	[biterm] -> [<end>end]
                  ")
 ```
 
-# HASIL DATA MINING
+# HASIL _DATA MINING_
 
-## Hasil Data Mining
+## Hasil _Data Mining_
 
-Pada situs [www.neliti.com](https://www.neliti.com/id/), didapatkan ada `r nrow(judul_all)/1000 %>% round(3)` buah _unique_ penelitian hasil pencarian _keywords_. Tentunya bisa jadi satu judul penelitian keluar dari hasil pencarian lebih dari satu _keywords_. Berikut adalah grafik dari 14 _keywords_ (dan kombinasi _keywords_) teratas berdasarkan banyaknya penelitian:
+Pada situs [www.neliti.com](https://www.neliti.com/id/), didapatkan ada `r nrow(rekap_awal)/1000 %>% round(3)` buah _unique_ penelitian hasil pencarian _keywords_. Tentunya bisa jadi satu judul penelitian keluar dari hasil pencarian lebih dari satu _keywords_. Berikut adalah grafik dari 14 _keywords_ (dan kombinasi _keywords_) teratas berdasarkan banyaknya penelitian:
 
 ```{r,echo=FALSE,fig.height=3.5,fig.width=10}
-rekap_all %>% 
+rekap_awal %>% 
    group_by(keyword) %>% 
    tally() %>% 
    ungroup() %>% 
@@ -109,30 +119,245 @@ Untuk mencari _keywords_ lainnya, saya akan kumpulkan semua judul penelitian has
 
 Perlu diperhatikan bahwa kata sambung, kata depan, dan _stopwords_ akan dihapus dari analisa ini. 
 
-## Mencari _Keywords_ Lain
+## Mencari _Keywords_ Lain (lanjutan)
 
 Kata dan frekuensi kemunculannya disajikan dalam bentuk _wordcloud_ berikut ini:
 
-```{r,echo=FALSE,fig.height=5,fig.width=10}
+```{r,echo=FALSE,fig.height=4.5,fig.width=7,fig.align='center'}
 wc = 
-   judul_all %>% 
+   judul_awal %>% 
    filter(n>110) %>% 
    filter(words != "l")
 wc %>% 
    ggplot() + 
    geom_text_wordcloud_area(aes(label = words, size = n,color = n)) +
-   scale_size_area(max_size = 15) +
+   scale_size_area(max_size = 11) +
    scale_color_gradient(high = "darkred",low = "blue") +
    theme_minimal()
 ```
 
-## Mencari _Keywords_ Lain
+## Mencari _Keywords_ Lain (lanjutan)
 
+Dari _wordcloud_ di atas, saya akan memilih empat buah _keywords_ baru untuk dicari kembali, yakni:
 
+1. Ikan,
+1. Buah,
+1. Tepung, dan
+1. Protein.
 
-## lala
+Pencarian kembali dilakukan di situs `www.neliti.com` dan menghasilkan `r (nrow(rekap_all_data) - nrow(rekap_awal))/1000 %>% round(3)` _unique_ judul penelitian baru.
 
+## Hasil _Data Mining_ Kedua
 
+Berikut adalah grafik dari 14 _keywords_ (dan kombinasi _keywords_) teratas berdasarkan banyaknya penelitian:
 
+```{r,echo=FALSE,fig.height=4,fig.width=10}
+rekap_all_data %>% 
+   group_by(keyword) %>% 
+   tally() %>% 
+   ungroup() %>% 
+   arrange(desc(n)) %>% 
+   filter(n>150) %>% 
+   ggplot(aes(x = reorder(keyword,n),
+              y = n)) +
+   geom_col(color = "black",fill = "steelblue") +
+   geom_label(aes(label = n),size = 2) +
+   coord_flip() +
+   ylim(0,3500) +
+   labs(title = "Berapa banyak penelitian yang didapatkan dari keywords ... ?",
+        subtitle = "Hasil Data Mining Kedua di Situs www.neliti.com",
+        y = "Banyak judul penelitian",
+        x = "Keywords terkait") +
+   theme_minimal() +
+   theme(axis.text.x = element_blank())
+```
 
+# _TEXT ANALYSIS_: _Keywords_ Keseluruhan
 
+## _Wordcloud_ _Keywords_ Keseluruhan
+
+Dari keseluruhan judul penelitian yang dihimpun, berikut adalah kata dan frekuensi kemunculannya yang disajikan dalam bentuk _wordcloud_ berikut:
+
+```{r,echo=FALSE,fig.height=4.5,fig.width=7,fig.align='center'}
+wc = 
+   judul_wc_all %>% 
+   filter(n>250) %>% 
+   filter(words != "l") %>% 
+   arrange(desc(n))
+wc %>% 
+   ggplot() + 
+   geom_text_wordcloud_area(aes(label = words, size = n,color = n)) +
+   scale_size_area(max_size = 11) +
+   scale_color_gradient(high = "darkred",low = "darkgreen") +
+   theme_void()
+```
+
+## _Bigrams_ _Keywords_ Keseluruhan
+
+\begin{alertblock}{Definisi}
+$Bigrams$ adalah kumpulan pasangan kata yang selalu muncul secara bersamaan. 
+\end{alertblock}
+
+Dari semua judul penelitian yang ada, saya akan buat analisa _bigrams_ untuk melihat _keywords_ lain apa saja yang mungkin muncul. Selain itu, kita bisa memperkirakan topik-topik apa saja yang ada.
+
+Berikut adalah _bigrams_ yang muncul dengan frekuensi minimal `70` kali.
+
+## _Bigrams_ _Keywords_ Keseluruhan
+
+```{r,echo=FALSE,fig.height=4}
+ready_bigram %>% 
+   filter(n>70) %>% 
+   separate(bigram,into=c('word1','word2'),sep=' ') %>% 
+   graph_from_data_frame() %>%
+  ggraph(layout = 'fr') +
+  geom_edge_arc(aes(edge_alpha=n),
+                 show.legend = F,
+                 color='darkred') +
+  geom_node_point(size=1,color='steelblue') +
+  geom_node_text(aes(label=name),alpha=0.8,size=3,vjust=1,hjust=1) +
+  theme_void()
+```
+
+## Hipotesis Sementara
+
+_Keyword_ `ikan` memiliki frekuensi terbesar pada _wordcloud_ dan memiliki banyak _bigrams_.
+
+Oleh karena itu, kita akan analisa terpisah _keyword_ `ikan` dari _keywords_ lainnya.
+
+# ANALISA _KEYWORD_: `IKAN`
+
+## _Wordcloud_ dari _Keyword_ `ikan`
+
+```{r,echo=FALSE,fig.align='center',fig.height=4,fig.width=7}
+wc = 
+   judul_ikan %>% 
+   filter(n>90) %>% 
+   filter(words != "l") %>% 
+   arrange(desc(n))
+wc %>% 
+   ggplot() + 
+   geom_text_wordcloud_area(aes(label = words, size = n,color = n)) +
+   scale_size_area(max_size = 35) +
+   scale_color_gradient(high = "darkred",low = "darkgreen") +
+   theme_void()
+```
+
+## _Bigrams_ dari _Keyword_ `ikan`
+
+```{r,echo=FALSE,fig.height=4}
+ready_bigram_ikan %>% 
+  filter(n>40) %>% 
+  separate(bigram,into=c('word1','word2'),sep=' ') %>% 
+  graph_from_data_frame() %>%
+  ggraph(layout = 'fr') +
+  geom_edge_arc(aes(edge_alpha=n),
+                 show.legend = F,
+                 color='darkred') +
+  geom_node_point(size=1,color='steelblue') +
+  geom_node_text(aes(label=name),alpha=0.8,size=3,vjust=1,hjust=1) +
+  theme_void()
+```
+
+## _Bigrams_ Keseluruhan Tanpa _Keyword_ `ikan`
+
+```{r,echo=FALSE,fig.height=4}
+ready_bigram_non_ikan %>% 
+  filter(n>60) %>% 
+  separate(bigram,into=c('word1','word2'),sep=' ') %>% 
+  graph_from_data_frame() %>%
+  ggraph(layout = 'fr') +
+  geom_edge_arc(aes(edge_alpha=n),
+                 show.legend = F,
+                 color='darkred') +
+  geom_node_point(size=1,color='steelblue') +
+  geom_node_text(aes(label=name),alpha=0.8,size=3,vjust=1,hjust=1) +
+  theme_void()
+```
+
+# _TEXT ANALYSIS_: _Topics Modelling_ 
+
+## _Topic Modelling_
+
+_Topic modelling_ adalah proses melakukan pengelompokkan dari kumpulan teks. Saya akan melakukan pengelompokkan dari semua judul penelitian yang ada.
+
+Metode _topic modelling_ yang akan digunakan adalah _Latent Dirichlet Allocation_ (LDA).
+
+Saya akan lakukan beberapa analisa dengan berbagai kombinasi _keywords_.
+
+## _Topic Modelling_ Tanpa Keyword `ikan`
+
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=3.5}
+tidy(lda, matrix = "beta") %>%
+  group_by(topic) %>%
+  top_n(5, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta) %>%
+  mutate(term = as.factor(term),
+         topic = as.factor(paste('Topik',topic,sep='-'))) %>%
+  ggplot(aes(x=term,y=beta,fill=topic)) +
+  geom_col() +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  theme(legend.position = 'none',
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank()) +
+   theme_minimal() +
+   labs(title = "Kata-kata kunci dari masing-masing topik",
+        subtitle = "Semua judul penelitian (kecuali keyword ikan)") +
+   theme(legend.position = "none",
+         axis.text.x = element_blank(),
+         axis.title = element_blank())
+```
+
+## _Topic Modelling_ Khusus Keyword `ikan`
+
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=3.5}
+tidy(lda_ikan, matrix = "beta") %>%
+  group_by(topic) %>%
+  top_n(5, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta) %>%
+  mutate(term = as.factor(term),
+         topic = as.factor(paste('Topik',topic,sep='-'))) %>%
+  ggplot(aes(x=term,y=beta,fill=topic)) +
+  geom_col() +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  theme(legend.position = 'none',
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank()) +
+   theme_minimal() +
+   labs(title = "Kata-kata kunci dari masing-masing topik",
+        subtitle = "Semua judul penelitian (khusus keyword ikan)") +
+   theme(legend.position = "none",
+         axis.text.x = element_blank(),
+         axis.title = element_blank())
+```
+
+## _Topic Modelling_ Tanpa Keyword `ikan`,`buah`,`tepung`, dan `protein`
+
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=3.5}
+tidy(lda_umum, matrix = "beta") %>%
+  group_by(topic) %>%
+  top_n(5, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta) %>%
+  mutate(term = as.factor(term),
+         topic = as.factor(paste('Topik',topic,sep='-'))) %>%
+  ggplot(aes(x=term,y=beta,fill=topic)) +
+  geom_col() +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  theme(legend.position = 'none',
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank()) +
+   theme_minimal() +
+   labs(title = "Kata-kata kunci dari masing-masing topik",
+        subtitle = "Semua judul penelitian (tanpa keyword tertentu)") +
+   theme(legend.position = "none",
+         axis.text.x = element_blank(),
+         axis.title = element_blank())
+```
