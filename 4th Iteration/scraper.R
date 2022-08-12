@@ -1,4 +1,5 @@
-setwd("~/Documents/AIPG-Gamma/4th Iteration")
+# setwd("~/Documents/AIPG-Gamma/4th Iteration")
+setwd("E:/DATA SCIENCE/Komite Gamma/4th Iteration")
 
 # bebersih
 rm(list=ls())
@@ -33,7 +34,7 @@ for(i in 1:length(keywords)){
 all_links = c()
 for(i in 1:length(urls)){
   # set url looping
-  temp = ursl[i]
+  temp = urls[i]
   # scraping
   url_dapet = 
     temp %>% 
