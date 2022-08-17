@@ -26,3 +26,5 @@ for(i in 1:length(link_publikasi)){
   time = runif(1,1,5)
   Sys.sleep(time)
 }
+
+save(output,file = "paper.rda")
