@@ -59,17 +59,9 @@ ambilin = function(tes){
 # siapin dulu rumahnya
 output = vector("list",length(link_publikasi))
 
-for(i in 5838:length(link_publikasi)){
+for(i in 1:length(link_publikasi)){
   output[[i]] = ambilin(link_publikasi[i])
   print(i)
-<<<<<<< HEAD
-  time = runif(1,0,1)
-  Sys.sleep(time)
-}
-
-save(output,file = "sementara.rda")
-=======
 }
 
 save(output,file = "raw.rda")
->>>>>>> 08dd5859c8ae454e6f5bd7e46250ee4d57d649a6
