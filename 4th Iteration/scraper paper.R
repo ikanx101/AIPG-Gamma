@@ -20,9 +20,11 @@ ambilin = function(tes){
 
 output = vector("list",length(link_publikasi))
 
-for(i in 1:length(link_publikasi)){
+for(i in 5838:length(link_publikasi)){
   output[[i]] = ambilin(link_publikasi[i])
   print(i)
-  time = runif(1,1,5)
+  time = runif(1,0,1)
   Sys.sleep(time)
 }
+
+save(output,file = "sementara.rda")
