@@ -1,10 +1,10 @@
-setwd("~/Komite Gamma/4th Iteration")
+# setwd("~/Komite Gamma/4th Iteration")
 
 rm(list=ls())
 
 # ==============================================================================
 # panggil libraries
-#library(RSelenium)  # web scraping
+library(RSelenium)  # web scraping
 library(rvest)      # web scraping
 library(dplyr)      # buat data manipulation
 
@@ -24,7 +24,7 @@ remote_driver = driver[["client"]]
 # buka situs
 buka_in = function(url){
   remote_driver$navigate(url)
-  Sys.sleep(5)
+  Sys.sleep(4)
 }
 
 
