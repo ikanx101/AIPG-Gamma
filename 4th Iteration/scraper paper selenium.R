@@ -51,6 +51,8 @@ ambilin = function(tes){
   tahun = ifelse(identical(tahun, character(0)),
                  NA,
                  tahun)
+  
+  df = data.frame(judul,tahun,penulis)
   # save linknya
   df$link = tes
   return(df)
@@ -59,9 +61,9 @@ ambilin = function(tes){
 # siapin dulu rumahnya
 output = vector("list",length(link_publikasi))
 
-for(i in 1:length(link_publikasi)){
+for(i in 2499:length(link_publikasi)){
   output[[i]] = ambilin(link_publikasi[i])
   print(i)
 }
 
-save(output,file = "raw.rda")
+save(output,file = "raw 3.rda")
